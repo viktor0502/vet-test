@@ -171,7 +171,7 @@ main {
   margin-bottom: 50px;
 }
 .section__title.element-animation {
-  transform: translate(-100px, 0);
+  transform: translate(-50px, 0);
 }
 .section__title.element-animation.element-show {
   transition: 0.5s all 0.1s;
@@ -182,7 +182,7 @@ main {
   line-height: 44px;
 }
 .section__title h2.element-animation {
-  transform: translate(-100px, 0);
+  transform: translate(-50px, 0);
   pointer-events: none;
 }
 .section__title h2.element-animation.element-show {
@@ -314,7 +314,7 @@ header .header__title {
   align-items: center;
 }
 .benefits .benefits__item.element-animation {
-  transform: translate(0, 100px);
+  transform: translate(0, 20px);
 }
 .benefits .benefits__item.element-animation:nth-child(1).element-show {
   transition: 1s all 0.1s;
@@ -1213,6 +1213,7 @@ footer .nav__menu {
   nav .nav__menu .footer__rules,
 footer .nav__menu .footer__rules {
     width: 100%;
+    font-size: 12px;
   }
   nav .nav__list,
 footer .nav__list {
@@ -1391,7 +1392,21 @@ footer .nav__list.nav__list--active {
     padding: 0 15px;
   }
   header .header__wrapper {
-    gap: 0;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+  header .header__title {
+    text-align: center;
+  }
+  header .btn {
+    margin: 30px auto 0;
+  }
+  header .header__img {
+    max-width: 80%;
+    position: relative;
+    bottom: -45px;
+    z-index: 100;
   }
   .contacts .contacts__title {
     flex-direction: column;
@@ -1431,7 +1446,7 @@ footer .nav__list.nav__list--active {
     font-size: 18px;
   }
   header h1 {
-    font-size: 36px;
+    font-size: 42px;
   }
   header h2 {
     font-size: 20px;
@@ -1539,15 +1554,6 @@ footer .nav__list.nav__list--active {
     right: -40%;
     top: 50%;
     transform: rotate(330deg);
-  }
-  header h4 {
-    font-size: 16px;
-  }
-  header h1 {
-    font-size: 28px;
-  }
-  header h2 {
-    font-size: 18px;
   }
   .price .paws-animation {
     display: none;

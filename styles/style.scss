@@ -148,7 +148,7 @@ main {
   display: inline-block;
   margin-bottom: 50px;
   &.element-animation {
-    transform: translate(-100px, 0);
+    transform: translate(-50px, 0);
     &.element-show {
       transition: 0.5s all 0.1s;
     }
@@ -158,7 +158,7 @@ main {
     font-size: 36px;
     line-height: 44px;
     &.element-animation {
-      transform: translate(-100px, 0);
+      transform: translate(-50px, 0);
       pointer-events: none;
       &.element-show {
         transition: 1s all 0.2s;
@@ -287,7 +287,7 @@ header {
     justify-content: center;
     align-items: center;
     &.element-animation {
-      transform: translate(0, 100px);
+      transform: translate(0, 20px);
       &:nth-child(1) {
         &.element-show {
           transition: 1s all 0.1s;
@@ -1260,6 +1260,7 @@ footer {
       justify-content: space-between;
       .footer__rules {
         width: 100%;
+        font-size: 12px;
       }
     }
     .nav__list {
@@ -1461,7 +1462,22 @@ footer {
   }
   header {
     .header__wrapper {
-      gap: 0;
+      gap: 10px;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header__title{
+      text-align: center;
+    }
+    .btn{
+      margin: 30px auto 0;
+    }
+    .header__img{
+      max-width: 80%;
+      position: relative;
+      bottom: -45px;
+      z-index: 100;
+      
     }
   }
   .contacts {
@@ -1505,7 +1521,7 @@ footer {
       font-size: 18px;
     }
     h1 {
-      font-size: 36px;
+      font-size: 42px;
     }
     h2 {
       font-size: 20px;
@@ -1631,17 +1647,17 @@ footer {
       transform: rotate(330deg);
     }
   }
-  header {
-    h4 {
-      font-size: 16px;
-    }
-    h1 {
-      font-size: 28px;
-    }
-    h2 {
-      font-size: 18px;
-    }
-  }
+  // header {
+  //   h4 {
+  //     font-size: 16px;
+  //   }
+  //   h1 {
+  //     font-size: 28px;
+  //   }
+  //   h2 {
+  //     font-size: 18px;
+  //   }
+  // }
   .price{
     .paws-animation{
       display: none;
