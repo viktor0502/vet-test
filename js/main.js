@@ -46,7 +46,6 @@ window.addEventListener("DOMContentLoaded", () => {
     "price-content__item--active"
   );
 
-
   // FAQ
   function accord(accordBtnSelector, accordItemSelector) {
     const accordItem = document.querySelectorAll("." + accordItemSelector);
@@ -114,10 +113,75 @@ window.addEventListener("DOMContentLoaded", () => {
 
       nextSlide(-1);
     });
-   
   }
 
   slider("btn--next", "btn--prev", "slide__img", "dot");
+
+  // Burger-menu
+  function burgerMenu(burgerBtnSelector, navMenuSelector, linksSelector) {
+    const burger = document.querySelectorAll("." + burgerBtnSelector),
+      navMenu = document.querySelectorAll("." + navMenuSelector),
+      link = document.querySelectorAll("." + linksSelector);
+
+    const scrollLock = () => {
+        document.body.style.overflow = "hidden";
+      },
+      scrollUnclock = () => {
+        document.body.style.overflow = "";
+      },
+      menuOpen = () => {
+        navMenu.forEach((menu) => {
+          menu.classList.add(navMenuSelector + "--active");
+          scrollLock();
+        });
+      },
+      menuClose = () => {
+        navMenu.forEach((menu) => {
+          menu.classList.remove(navMenuSelector + "--active");
+          scrollUnclock();
+        });
+      };
+
+    burger.forEach((burger) => {
+      burger.addEventListener(`click`, () => {
+        burger.classList.toggle(burgerBtnSelector + "--active");
+        if (burger.classList.contains(burgerBtnSelector + "--active")) {
+          menuOpen();
+        } else {
+          menuClose();
+        }
+      });
+    });
+    link.forEach((i) => {
+      i.addEventListener(`click`, () => {
+        burger.forEach((burger) => {
+          burger.classList.remove(burgerBtnSelector + "--active");
+          menuClose();
+        });
+      });
+    });
+  }
+  burgerMenu("nav__burger", "nav__list", "nav__link");
+
+  // Smooth-scrolling
+
+  function smoothScrolling(linkSelector) {
+    const anchors = document.querySelectorAll("." + linkSelector);
+    for (let anchor of anchors) {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const blockID = anchor.getAttribute("href").substr(1);
+
+        document.getElementById(blockID).scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+    }
+  }
+  smoothScrolling('nav__link')
+
   // Form
 
   // const TOKEN = "5728237657:AAE1VRvGAHVUgMZKrIHPrVxaXySHdj6-FKo";
@@ -159,12 +223,11 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  let options = { threshold: [0.1] };
+  let options = { threshold: [0.3] };
   let observer = new IntersectionObserver(onEntry, options);
   let elements = document.querySelectorAll(".element-animation");
-  
+
   for (let elm of elements) {
     observer.observe(elm);
   }
 });
-
