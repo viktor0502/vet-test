@@ -181,6 +181,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
   smoothScrolling('nav__link')
+  smoothScrolling('btn')
 
   // Form
 
