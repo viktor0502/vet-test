@@ -415,9 +415,7 @@ header .header__title {
 }
 .services .services__img {
   height: 75px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
 }
 .services .services__name {
   font-size: 28px;
