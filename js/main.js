@@ -185,38 +185,38 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Form
 
-  // const TOKEN = "5728237657:AAE1VRvGAHVUgMZKrIHPrVxaXySHdj6-FKo";
-  // const CHAT_ID = "-1001603992347";
-  // const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
-  // const success = document.getElementById("success");
+  const TOKEN = "5728237657:AAE1VRvGAHVUgMZKrIHPrVxaXySHdj6-FKo";
+  const CHAT_ID = "-1001603992347";
+  const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+  const success = document.getElementById("success");
 
-  // const form = document.getElementById("form");
+  const form = document.getElementById("form");
 
-  // form.addEventListener("submit", function (e) {
-  //   e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  //   let message = `<b> Заявка с сайта! </b>\n`;
-  //   message += `<b> Имя: </b> ${this.name.value} \n`;
-  //   message += `<b> Телефон: </b> ${this.phone.value}`;
+    let message = `<b> Заявка с сайта! </b>\n`;
+    message += `<b> Имя: </b> ${this.name.value} \n`;
+    message += `<b> Телефон: </b> ${this.phone.value}`;
 
-  //   axios
-  //     .post(URI_API, {
-  //       chat_id: CHAT_ID,
-  //       parse_mode: "html",
-  //       text: message,
-  //     })
-  //     .then((res) => {
-  //       this.name.value = "";
-  //       this.phone.value = "";
-  //       success.style.display = "block";
-  //     })
-  //     .catch((err) => {
-  //       console.warn(err);
-  //     })
-  //     .finally(() => {
-  //       console.log("Over");
-  //     });
-  // });
+    axios
+      .post(URI_API, {
+        chat_id: CHAT_ID,
+        parse_mode: "html",
+        text: message,
+      })
+      .then((res) => {
+        this.name.value = "";
+        this.phone.value = "";
+        success.style.display = "block";
+      })
+      .catch((err) => {
+        console.warn(err);
+      })
+      .finally(() => {
+        console.log("Over");
+      });
+  });
   function onEntry(entry) {
     entry.forEach((change) => {
       if (change.isIntersecting) {
@@ -224,7 +224,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  let options = { threshold: [0.3] };
+  let options = { threshold: [0.1] };
   let observer = new IntersectionObserver(onEntry, options);
   let elements = document.querySelectorAll(".element-animation");
 
